@@ -52,7 +52,8 @@ class Product
 	 */
 	public function __toString()
 	{		
-		return $this->_code . ' [' . $this->_price . '; ' . str_replace('Array', '', print_r($this->_discounts, true)) . ']';
+		return $this->_code . ' [' . $this->_price . '; ' 
+			. str_replace('Array', '', print_r($this->_discounts, true)) . ']';
 	}
 
 	/**
