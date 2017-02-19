@@ -3,8 +3,7 @@
 /**
 * Продукт
 */
-class Product 
-{
+class Product {
 	/**
 	 * Код продукта
 	 * $var string
@@ -37,8 +36,7 @@ class Product
 	 * @param float $price 
 	 * @param integer $discountLimit
 	 */
-	function __construct($code, $price, $discountLimit = 1)
-	{
+	function __construct($code, $price, $discountLimit = 1) {
 		$this->_code = strtoupper($code);
 		$this->_price = $price;
 		$this->_discountLimit = $discountLimit;
@@ -50,8 +48,7 @@ class Product
 	 * 	 
 	 * @return string
 	 */
-	public function __toString()
-	{		
+	public function __toString() {		
 		return $this->_code . ' [' . $this->_price . '; ' 
 			. str_replace('Array', '', print_r($this->_discounts, true)) . ']';
 	}
@@ -61,8 +58,7 @@ class Product
 	 * 	 
 	 * @return string
 	 */
-	public function getCode()
-	{
+	public function getCode() {
 		return $this->_code;
 	}
 
@@ -73,8 +69,7 @@ class Product
 	 * @param float $volume
 	 * @return bool
 	 */
-	public function addDiscount($code, $volume)
-	{
+	public function addDiscount($code, $volume) {
 		if (count($this->_discounts) >= $this->_discountLimit) {
 			return false;
 		}
@@ -88,8 +83,7 @@ class Product
 	 * 	 
 	 * @return array
 	 */
-	public function getDiscounts()
-	{
+	public function getDiscounts() {
 		return $this->_discounts;
 	}
 
@@ -98,8 +92,7 @@ class Product
 	 * 	 
 	 * @return float
 	 */
-	public function getPrice()
-	{
+	public function getPrice() {
 		return $this->_price;
 	}
 
@@ -108,8 +101,7 @@ class Product
 	 * 	 
 	 * @return float
 	 */
-	public function getDiscountValue()
-	{
+	public function getDiscountValue() {
 		$totalVolume = array_sum($this->_discounts);
 		return round($this->_price * $totalVolume / 100, 2);
 	}

@@ -3,8 +3,8 @@
 /**
 * Менеджер скидок
 */
-class DiscountManager 
-{
+class DiscountManager {
+	
 	/**	 
 	 * Массив формирователей скидок
 	 * @var array
@@ -14,8 +14,7 @@ class DiscountManager
 	/**
 	 * Конструктор	 
 	 */
-	function __construct()
-	{
+	function __construct() {
 		$discounts =array()	;
 	}	
 
@@ -25,8 +24,7 @@ class DiscountManager
 	 * @param DiscountInterface $discount
 	 * @return void
 	 */
-	public function addDiscount(DiscountInterface $discount)
-	{
+	public function addDiscount(DiscountInterface $discount) {
 		$this->_discounts[] = $discount;
 	}
 
@@ -36,8 +34,7 @@ class DiscountManager
 	 * @param Basket &$basket
 	 * @return void
 	 */
-	public function setDiscounts(Basket &$basket)
-	{
+	public function setDiscounts(Basket &$basket) {
 		foreach ($this->_discounts as $key => $discount) {
 			$discount->apply($basket);
 		}

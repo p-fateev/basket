@@ -3,15 +3,14 @@
 /**
 * Класс для отображения инвойса в формате HTML
 */
-class HtmlInvoiceView extends InvoiceViewAbstract
-{
+class HtmlInvoiceView extends InvoiceViewAbstract {
+	
 	/**
 	 * Выводит на экран инвойс в виде таблицы
 	 * 
 	 * @return void
 	 */
-	public function render()
-	{
+	public function render() {
 		$products = $this->_invoice->getBasket()->getProducts();
 
 		echo '<table border="1" align="center">';

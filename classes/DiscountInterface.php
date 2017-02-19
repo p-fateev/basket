@@ -3,8 +3,8 @@
 /**
 * Интерфейс формирователя скидок
 */
-interface DiscountInterface
-{		
+interface DiscountInterface {		
+	
 	/**
 	 * Согласно заданным условиям формирует скидки для товаров
 	 * 

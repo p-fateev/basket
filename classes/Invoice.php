@@ -3,8 +3,8 @@
 /**
 * Инвойс
 */
-class Invoice
-{
+class Invoice {
+
 	/**
 	 * Ссылка на корзину продуктов
 	 * @var
@@ -35,8 +35,7 @@ class Invoice
 	 * @param Basket &$basket	 
 	 * @param DiscountManager &$discountManager 	 
 	 */
-	function __construct(&$basket, &$discountManager)
-	{
+	function __construct(&$basket, &$discountManager) {
 		$this->_basket = $basket;
 		$this->_discountManager = $discountManager;		
 	}
@@ -46,8 +45,7 @@ class Invoice
 	 * 	 
 	 * @return Basket
 	 */
-	public function getBasket()
-	{
+	public function getBasket() {
 		return $this->_basket;
 	}
 
@@ -56,8 +54,7 @@ class Invoice
 	 * 	 
 	 * @return void
 	 */
-	public function calculate()
-	{
+	public function calculate() {
 		$this->_totalPrice = 0;
 		$this->_totalDiscount = 0;
 
@@ -74,8 +71,7 @@ class Invoice
 	 * 	 
 	 * @return float
 	 */
-	public function getTotalPrice()
-	{
+	public function getTotalPrice() {
 		return $this->_totalPrice;		
 	}
 
@@ -84,8 +80,7 @@ class Invoice
 	 * 	 
 	 * @return float
 	 */
-	public function getTotalDiscount()
-	{
+	public function getTotalDiscount() {
 		return $this->_totalDiscount;		
 	}
 
@@ -94,8 +89,7 @@ class Invoice
 	 * 	 
 	 * @return float
 	 */
-	public function getTotalCharge()
-	{
+	public function getTotalCharge() {
 		return $this->_totalPrice - $this->_totalDiscount;		
 	}
 

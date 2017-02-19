@@ -3,15 +3,13 @@
 /**
 * Класс для отображения инвойса в текстовом формате
 */
-class TxtInvoiceView extends InvoiceViewAbstract
-{
+class TxtInvoiceView extends InvoiceViewAbstract {
 	/**
 	 * Выводит на экран инвойс
 	 * 
 	 * @return void
 	 */
-	public function render()
-	{
+	public function render() {
 		$products = $this->_invoice->getBasket()->getProducts();
 
 		/* проходим по всем продуктам */

@@ -3,8 +3,7 @@
 /**
 * Класс, который формирует скидки для товаров в зависимости от их количества в корзине 
 */
-class CountDiscount implements DiscountInterface
-{
+class CountDiscount implements DiscountInterface {
 
 	/**	 
 	 * Массив, содержащий схему формирования скидки:
@@ -26,8 +25,7 @@ class CountDiscount implements DiscountInterface
 	 * @param array $volumes
 	 * @param array $unallowed
 	 */
-	function __construct($volumes, $unallowed = array())
-	{
+	function __construct($volumes, $unallowed = array()) {
 		ksort($volumes);
 		$this->_volumes = $volumes;
 		$this->_unallowed = $unallowed;
@@ -39,8 +37,7 @@ class CountDiscount implements DiscountInterface
 	 * @param Basket &$basket
 	 * @return void
 	 */
-	public function apply(Basket &$basket)
-	{
+	public function apply(Basket &$basket) {
 		$list = $basket->getProductsList();
 		
 		/* получаем максимальное количество продуктов, для которых применяется скидка */

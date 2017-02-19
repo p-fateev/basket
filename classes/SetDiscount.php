@@ -3,8 +3,7 @@
 /**
 * Класс, который формирует скидки для наборов продуктов
 */
-class SetDiscount implements DiscountInterface
-{
+class SetDiscount implements DiscountInterface {
 	/**	 
 	 * Массив кодов продуктов, которые образуют набор	 
 	 * @var array
@@ -23,8 +22,7 @@ class SetDiscount implements DiscountInterface
 	 * @param array $codes
 	 * @param float $volume
 	 */
-	function __construct($codes, $volume)
-	{
+	function __construct($codes, $volume) {
 		$this->_codes = $codes;
 		$this->_volume = $volume;
 	}
@@ -35,8 +33,7 @@ class SetDiscount implements DiscountInterface
 	 * @param Basket &$basket
 	 * @return void
 	 */
-	public function apply(Basket &$basket)
-	{
+	public function apply(Basket &$basket) {
 		$sets = $basket->getProductSets($this->_codes);
 
 		foreach ($sets as $set) {

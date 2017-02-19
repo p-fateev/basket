@@ -4,8 +4,7 @@
 * Класс, который формирует скидки для продуктов, 
 * которые покупаются одновременно с другими продуктами
 */
-class RefDiscount implements DiscountInterface
-{
+class RefDiscount implements DiscountInterface {
 	/**	 
 	 * Код продукта, для которого формируется скидка	 
 	 * @var string
@@ -31,8 +30,7 @@ class RefDiscount implements DiscountInterface
 	 * @param array $refCodes
 	 * @param float $volume
 	 */
-	function __construct($code, $refCodes, $volume)
-	{
+	function __construct($code, $refCodes, $volume) {
 		$this->_code = $code;
 		$this->_refCodes = $refCodes;
 		$this->_volume = $volume;
@@ -45,8 +43,7 @@ class RefDiscount implements DiscountInterface
 	 * @param Basket &$basket
 	 * @return void
 	 */
-	public function apply(Basket &$basket)
-	{
+	public function apply(Basket &$basket) {
 		$products = $basket->getByCode($this->_code);
 		$refExist = $basket->productsExist($this->_refCodes);
 

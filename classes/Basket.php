@@ -3,8 +3,8 @@
 /**
 * Корзина продуктов
 */
-class Basket 
-{
+class Basket {
+	
 	/**	 
 	 * Массив продуктов
 	 * @var array
@@ -14,8 +14,7 @@ class Basket
 	/**
 	 * Конструктор	 
 	 */
-	function __construct()
-	{
+	function __construct() {
 		$this->_products = array();
 		$this->_discounts = array();
 	}	
@@ -26,8 +25,7 @@ class Basket
 	 * @param Product $product
 	 * @return void
 	 */
-	public function addProduct(Product $product)
-	{
+	public function addProduct(Product $product) {
 		$this->_products[] = $product;
 	}
 
@@ -36,8 +34,7 @@ class Basket
 	 * 
 	 * @return array
 	 */
-	public function getProducts()
-	{
+	public function getProducts() {
 		return $this->_products;
 	}
 
@@ -47,8 +44,7 @@ class Basket
 	 * @param string $code код продукта
 	 * @return array
 	 */
-	public function getByCode($code)
-	{
+	public function getByCode($code) {
 		$result = array();
 
 		foreach ($this->_products as $key => $product) {
@@ -67,8 +63,7 @@ class Basket
 	 * @param array $codes массив кодов продуктов
 	 * @return bool
 	 */
-	public function productsExist($codes)
-	{
+	public function productsExist($codes) {
 		foreach ($codes as $code) {
 			foreach ($this->_products as $product) {
 				if ($product->getCode() == $code) {
@@ -85,8 +80,7 @@ class Basket
 	 * @param array $codes коды продуктов набора
 	 * @return array
 	 */
-	public function getProductSets($codes)
-	{
+	public function getProductSets($codes) {
 		$sets = array();
 		
 		foreach ($codes as $key => $code) {
@@ -100,7 +94,7 @@ class Basket
 		}
 
 		
-		for ($i=0; $i < $setsCount; $i++) { 
+		for ($i = 0; $i < $setsCount; $i++) { 
 			$set = array();
 			foreach ($codes as $code) {
 				$set[] = $search[$code][$i]; 
@@ -117,8 +111,7 @@ class Basket
 	 * 
 	 * @return array
 	 */
-	public function getProductsList()
-	{
+	public function getProductsList() {
 		$list = array();
 
 		foreach ($this->_products as $product) {

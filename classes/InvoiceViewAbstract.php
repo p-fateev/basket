@@ -3,8 +3,7 @@
 /**
 * Абстрактный класс для отображения инвойса
 */
-abstract class InvoiceViewAbstract
-{
+abstract class InvoiceViewAbstract {
 	
 	/**
 	 * Объект инвойса
@@ -17,8 +16,7 @@ abstract class InvoiceViewAbstract
 	 * 
 	 * @param Invoice &$invoice
 	 */
-	public function __construct(Invoice &$invoice)
-	{
+	public function __construct(Invoice &$invoice) {
 		$this->_invoice = $invoice;
 	}
 
