@@ -35,5 +35,5 @@
 
 Demo: https://pf-soft.net/cv/basket/
 
-Диаграмма классов
+Диаграмма классов <br />
 <img src="classes-diagram.png" />
